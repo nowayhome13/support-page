@@ -48,149 +48,130 @@ const Help = () => {
 
   return (
     <>
-    <header className='header-section'>
-        <h1 className='head'>Help</h1>
-    </header>
-
-    <div className='form-heading'>
-      <h1>Raise Support</h1>
-    </div>
-
-    <div className='main-section'>
-    <form onSubmit={handleSubmit} >
-    
-    <div className='align-input'>
-    <label>
-        Name
-        <input 
-            type="text" 
-            value={name} 
-            onChange={(event) => setName(event.target.value)}
-            placeholder="Name"
-            className='inpt'
-            required    
-         />
-      </label>
-      <br />
-      <label>
-        Target Field
-        <input 
-            type="url"  
-            value={targetField} 
-            onChange={(event) => setTargetField(event.target.value)} 
-            placeholder="Website Link"
-            className='inpt'
-            required
-        />
-      </label>
+      <header>
+          <h1>Help</h1>
+      </header>
+      <div className='form-heading'>
+        <h2>Raise Support</h2>
       </div>
-
-      <br />
-
-      
-      <div >
-      <label className='job-title'>
-        Job Title
-        <input 
-            type="text" 
-            value={jobTitle} 
-            onChange={(event) => setJobTitle(event.target.value)} 
-            placeholder="Title"
-            className='inpt-title'
-            required
-        />
-      </label>
+      <div>
+        <form onSubmit={handleSubmit} >
+        
+        <div className='align-div'>
+          <label> Name
+            <input 
+              type="text" 
+              value={name} 
+              onChange={(event) => setName(event.target.value)}
+              placeholder="Name"
+              required    
+            />
+          </label>
+          <br />
+          <label>
+            Target Field
+            <input 
+              type="url"  
+              value={targetField} 
+              onChange={(event) => setTargetField(event.target.value)} 
+              Placeholder="Website Link"
+              required
+            />
+          </label>
+        </div>
+        <br />
+        <div className='job-title-div'>
+          <label className='align-job-title'>
+            Job Title
+            <input 
+              type="text" 
+              value={jobTitle} 
+              onChange={(event) => setJobTitle(event.target.value)} 
+              placeholder="Title"
+              className='inpt-title'
+              required
+            />
+          </label>
+        </div>
+        <br/>
+        <div className='align-div'>
+          <label>
+            Job Category
+            <select id="job-category-select" value={jobCategory} onChange={(e) => setJobCategory(e.target.value)}>
+              {jobCategoryOptions.map((option) => (
+                <option key={option} value={option} required>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </label>
+          <br/>
+          <label>
+            Job Type
+            <select id="job-type-select" value={jobType} onChange={(e) => setJobType(e.target.value)}>
+              {jobTypeOptions.map((option) => (
+                <option key={option} value={option} required>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <br/>
+        <div className='align-div' >
+          <label>
+            Job Location
+            <input 
+              type="text" 
+              value={jobLocation} 
+              onChange={(event) => setJobLocation(event.target.value)} 
+              placeholder="Location"
+              required
+            />
+          </label>
+          <br/>
+          <label>
+            Salary Range
+            <input 
+              type="text" 
+              value={salaryRange} 
+              onChange={(event) => setSalaryRange(event.target.value)}
+              placeholder="Salary Range"
+              required  
+            />
+          </label>
+        </div>
+        <br />
+        <div className='align-div'>
+          <label>
+            Experience
+            <input 
+              type="text" 
+              value={experience} 
+              onChange={(event) => setExperience(event.target.value)} 
+              placeholder="Experience"
+              required
+            />
+          </label>
+          <br />
+          <label>
+            Qualification
+            <input 
+              type="text" 
+              value={qualification} 
+              onChange={(event) => setQualification(event.target.value)} 
+              placeholder="Qualification"
+              required
+            />
+          </label>
+        </div>
+        <br />
+        <div className='align-btn'>
+          <button type="submit" className='sbmt-btn'>Submit</button>
+        </div>
+      </form>
       </div>
-
-      <br />
-      <div className='align-input'>
-      <label>
-        Job Category
-      <select id="job-category-select" value={jobCategory} onChange={(e) => setJobCategory(e.target.value)}>
-            {jobCategoryOptions.map((option) => (
-              <option key={option} value={option} required>
-                {option}
-            
-              </option>
-            ))}
-        </select>
-        </label>
-      <br />
-      <label>
-        Job Type
-      
-        <select id="job-type-select" value={jobType} onChange={(e) => setJobType(e.target.value)}>
-            {jobTypeOptions.map((option) => (
-              <option key={option} value={option} required>
-                {option}
-              </option>
-            ))}
-        </select>
-        </label>
-      </div>
-      
-      <br />
-      
-      <div className='align-input'>
-      <label>
-        Job Location
-        <input 
-            type="text" 
-            value={jobLocation} 
-            onChange={(event) => setJobLocation(event.target.value)} 
-            placeholder="Location"
-            className='inpt'
-            required
-        />
-      </label>
-      <br />
-      <label>
-        Salary Range
-        <input 
-            type="text" 
-            value={salaryRange} 
-            onChange={(event) => setSalaryRange(event.target.value)}
-            placeholder="Salary Range" 
-            className='inpt' 
-            required  
-        />
-      </label>
-      </div>
-
-      <br />
-
-      <div className='align-input'>
-      <label>
-        Experience
-        <input 
-            type="text" 
-            value={experience} 
-            onChange={(event) => setExperience(event.target.value)} 
-            placeholder="Experience"
-            className='inpt'
-            required
-        />
-      </label>
-      <br />
-      <label>
-        Qualification
-        <input 
-            type="text" 
-            value={qualification} 
-            onChange={(event) => setQualification(event.target.value)} 
-            placeholder="Qualification"
-            className='inpt'
-            required
-        />
-      </label>
-      </div>
-      <br />
-      <button type="submit">Submit</button>
-    </form>
-    </div>
-    
     </>
-
   );
 };
 
