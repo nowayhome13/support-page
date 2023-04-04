@@ -7,7 +7,7 @@ header,
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 9vh;
+    height: 5rem;
 }
 .form-heading{
     background-color: #F4F5F7;
@@ -97,14 +97,13 @@ select {
 }
 
 .sbmt-btn {
-    width: 13rem;
-    height: 8vh;
-    left: 627px;
-    top: 1157px;
+    width: 14rem;
+    height: 4.5rem;
     background: #1B7EF2;
     border-radius: 10px;
     border: none;
-    transition: 400ms;
+    cursor: pointer;
+    transition: 100ms;
 
     font-family: 'Inter';
     font-style: normal;
@@ -114,17 +113,19 @@ select {
     color: white;
 }
 
-.sbmt-btn:active {
-    opacity: 0.6;
+.sbmt-btn:hover {
+    opacity: 0.8;
     background-color: #19AAFC;
 }
 
-@media screen and (max-width: 600px) {
-    
-    body {
-        font-size: 1px;
-    }
+.sbmt-btn:active {
+    opacity: 0.6;
+    background-color: #0477ba;
+}
 
+@media screen and (max-width: 600px) {
+
+    
     form {
         padding-top: 2vh;
         width: 92%;
